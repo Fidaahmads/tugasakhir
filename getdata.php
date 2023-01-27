@@ -7,12 +7,12 @@ include_once('koneksi.php');
 
 // Kolom Data Tabel
 
-$id = $_POST['id'];
-$ambil_data = mysqli_query($koneksi, "SELECT `tabelan`.* ,daftar_kelas.id_kelas , data_kelas.kelas FROM tabelan JOIN daftar_kelas on daftar_kelas.no_siswa=tabelan.no JOIN data_kelas on data_kelas.id=daftar_kelas.id_kelas
-where `id` = '$id'"); 
+$no = $_POST['id'];
+$ambil_data = mysqli_query($koneksi, "SELECT `data_buku`.* ,daftar_genre.id_genre , data_genre.Genre FROM data_buku JOIN daftar_genre on daftar_genre.id_buku=data_buku.no JOIN data_genre on data_genre.id=daftar_genre.id_genre where `no`='$no';"); 
 
 $data = mysqli_fetch_assoc($ambil_data);
+//var_dump($data);die;
 
-$ambil_data_kelas = mysqli_query($koneksi, "select * from `data_kelas` "); 
+$ambil_data_genre = mysqli_query($koneksi, "select * from `data_genre` "); 
 
 ?>

@@ -7,25 +7,30 @@ include_once('koneksi.php');
 
 // Kolom Data Tabel
 
-$nama = $_POST['nama'];
-$nohp = $_POST['nohp'];
-$alamat = $_POST['alamat'];
-$sex = $_POST['sex'];
-$email = $_POST['email'];
-$foto = $_FILES['foto']['name'];
+$nomor = $_POST['Nomor'];
+$judul = $_POST['Judul'];
+$pengarang = $_POST['Pengarang'];
+$gambar = $_FILES['Gambar']['name'];
+$rak = $_POST['Rak'];
+$id_genre = $_POST ['Genre']; 
 
 
-$insert_data = mysqli_query($koneksi, "INSERT into tabelan 
-(`nama`,`nohp`,`alamat`,`sex`,`email`,`foto`) 
-values ('$nama','$nohp','$alamat','$sex','$email','$foto') ");
+$insert_data = mysqli_query($koneksi, "INSERT into data_buku 
+(`Nomor`,`Judul`,`Pengarang`,`Gambar`,`Rak`) 
+values ('$nomor','$judul','$pengarang','$gambar','$rak') ");
 
-//echo "Selamat $nama , alamat anda $alamat , berjenis kelamin $sex , dengan email $email";
+$id = $koneksi->insert_id;
+
+
+ mysqli_query($koneksi,"INSERT into daftar_genre (`id_genre`,`id_buku`) values ('$id_genre','$id')");
+
+//echo "Selamat $Nomor , alamat anda $alamat , berjenis kelamin $sex , dengan email $email";
 
 //echo '<img src="assets/'.$foto.'" class="card-img-to[" alt="...."';
 
 echo '<br>';
 
-echo var_dump($_FILES);
+// echo var_dump($_FILES);
 
-move_uploaded_file($_FILES["foto"]["tmp_name"],'assets/'.$_FILES['foto']['name']);
+move_uploaded_file($_FILES["Gambar"]["tmp_name"],'assets/'.$gambar);
 echo "<meta http-equiv=refresh content=1;URL='index.php'>";

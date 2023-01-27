@@ -1,23 +1,23 @@
 <?php
 include_once('koneksi.php');
 
-// echo var_dump($_POST);
+//echo var_dump($_POST);
 // Kolom data di table
-$nama = $_POST['nama'];
-$nohp = $_POST['nohp'];
-$alamat = $_POST['alamat'];
-$email = $_POST['email'];
-$sex = $_POST['sex'];
-$foto = $_FILES['foto'] ['name'];
+$nomor = $_POST['Nomor'];
+$judul = $_POST['Judul'];
+$pengarang = $_POST['Pengarang'];
+$gambar = $_FILES['Gambar'] ['name'];
+$rak = $_POST['Rak']; 
 
-$no = $_POST['no'];
-$id_kelas = $_POST['kelas'];
+$no = $_POST['id'];
+$id_genre = $_POST['Genre'];
 
 // echo "Selamat $nama , alamat anda $alamat , berjenis kelamin $jk No HP $nohp , dengan email $email <br>";
 
 // echo '<img src="assets/'.$foto.'" class="card-img-top" alt="...">';
 
-$query = "UPDATE tabelan set `nama` = '$nama', `nohp` = '$nohp', `alamat` = '$alamat',`email` = '$email',`sex` = '$sex',`foto` = '$foto' where `no` = '$no'  ";
+$query = "UPDATE data_buku set `Nomor` = '$nomor', `Judul` = '$judul', 
+`Pengarang` = '$pengarang',`Gambar` = '$gambar',`Rak` = '$rak' where `no` = '$no'  ";
 
 $update_data = mysqli_query($koneksi, $query);
 
@@ -28,13 +28,13 @@ if ($update_data) {
 }
 
 
-$cek_data_kelas = mysqli_query($koneksi,"select * from daftar_kelas where `no_siswa` = '$no'");
+$cek_data_genre = mysqli_query($koneksi,"select * from daftar_genre where `id_buku` = '$no'");
 // update daftar kelas
-if (mysqli_fetch_assoc($cek_data_kelas)) {
-    $query = mysqli_query($koneksi,"UPDATE daftar_kelas set `id_kelas` = '$id_kelas' where `no_siswa` = '$no'  ");
+if (mysqli_fetch_assoc($cek_data_genre)) {
+    $query = mysqli_query($koneksi,"UPDATE daftar_genre set `id_genre` = '$id_genre' where `id_buku` = '$no'  ");
 
 } else {
-    $query = mysqli_query($koneksi,"insert daftar_kelas values ( null,'$no','$id_kelas') ");
+    $query = mysqli_query($koneksi,"insert daftar_genre values ( null,'$no','$id_genre') ");
 }
 
 echo "<br>";
@@ -43,5 +43,5 @@ echo "<br>";
 
 // $nama = $_FILES["foto"]["name"];
 
-move_uploaded_file($_FILES["foto"]["tmp_name"], 'assets/'.$foto);
+move_uploaded_file($_FILES["Gambar"]["tmp_name"], 'assets/'.$gambar);
 echo "<meta http-equiv=refresh content=1;URL='home.php'>";
