@@ -42,15 +42,15 @@ $car=@$_GET['car'];
 	<link rel="stylesheet" href="css/style.css">
 
 
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="tableacces/css/style.css">
+  <link rel="stylesheet" href="tableacces/css/style.css">
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css"> 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css"> 
 	
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
 
@@ -88,6 +88,8 @@ $car=@$_GET['car'];
     <!-- END nav -->
   </div>
 	</section>
+
+  <div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="table-wrap">
@@ -100,8 +102,8 @@ $car=@$_GET['car'];
 						      <th>Pengarang</th>
 						      <th>Genre</th>
 						      <th>Gambar</th>
-							  <th>Rak</th>
-							  <th>Aksi</th>
+							    <th>Rak</th>
+							    <th>Aksi</th>
 						    </tr>
 						  </thead>
 						  <tbody>
@@ -138,6 +140,7 @@ $car=@$_GET['car'];
 				</div>
 			</div>
 		</div>
+  </div>
 
   <script src="tableassets/js/jquery.min.js"></script>
   <script src="tableassets/js/popper.js"></script>
@@ -151,8 +154,8 @@ $car=@$_GET['car'];
             <div class='modal-header'>
               <h1 class='modal-title fs-5' id='exampleModalLabel'>Ubah Data Buku</h1>
               <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-            </div>
-            <div class='modal-body'>
+                </div>
+              <div class='modal-body'>
             </div>
           </div>
         </div>
@@ -191,7 +194,7 @@ $car=@$_GET['car'];
           })
         });
 
-      </script>
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -202,6 +205,7 @@ $(document).ready( function () {
         } );
   </script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-	</body>
+	
+  </body>
 </html>
 
